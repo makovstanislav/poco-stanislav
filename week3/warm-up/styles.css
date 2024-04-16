@@ -1,3 +1,5 @@
+/* boilerplate */
+
 html {
     box-sizing: border-box;
     font-family: Helvetica, Arial, sans-serif;
@@ -7,16 +9,18 @@ html {
     box-sizing: inherit;
 }
 
+/* cards container */
 main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto)); /* auto-fit FITS the CURRENTLY AVAILABLE space, and auto equals to max-content  */
     grid-gap: 10px;
-    border: 4px solid grey;
-    border-radius: 5px;
     padding: 10px;
+    border: 4px solid #56626e;
+    border-radius: 5px;
 }
 
-.card {
+/* a card */
+section {
     background-color: #58a1af;
     font-weight: 600;
     min-height: 2rem;
@@ -27,11 +31,11 @@ main {
     padding: 10px;
 }
 
+/* dimensions are fitted manually */
 @media (min-width: 664px) and (max-width: 1100px) {
 
-    #d {
+    section:last-child {
         background-color: black;
-        grid-column: span 3;
-        
+        grid-column: span 3; /* set the starting line and then 3 columns to span */
     }
 }
