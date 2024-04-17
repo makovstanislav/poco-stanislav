@@ -1,0 +1,49 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    color: #e69a41;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+.topSection {
+    background-image: url('/water.jpg');
+    background-size: cover;
+    min-height: 16em;
+}
+
+.advantages {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 60px;
+    margin-top: 3em;
+}
+
+.advantage {
+    max-width: 100px;}
+
+.advantage img {
+    max-width: 70px;
+}
+
+.advantage p {
+    font-weight: bold;
+}
+
+.bottles {
+    display: flex;
+}
