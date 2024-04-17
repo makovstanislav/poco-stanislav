@@ -16,7 +16,7 @@ nav ul {
     gap: 20px;
 }
 
-nav li {
+li {
     list-style-type: none;
 }
 
@@ -44,6 +44,69 @@ nav li {
     font-weight: bold;
 }
 
+.bottlesSection {
+    text-align: left;
+    margin: 0 10em;
+}
+
 .bottles {
     display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.bottle img {
+    max-width: 250px;
+}
+
+.bottle p {
+    font-weight: 600;
+}
+
+.storiesSection {
+    text-align: left;
+    margin: 0 10em;
+}
+
+.stories {
+    display: flex;
+    justify-content: space-between;
+}
+
+.story {
+    min-height: 25em;
+    min-width: 45%;
+    background-size: cover;
+}
+
+#story1 {
+    background-image: url('/bottles_images/lifestyle_1.webp');  
+}
+
+#story2 {
+    background-image: url('/bottles_images/lifestyle_2.webp');
+}
+
+footer {
+    display: flex;
+    background-color: #ededed;
+    justify-content: flex-start; 
+    width: 100%;
+}
+
+.footerItemsSection {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-right: 20px;
+}
+
+.footerItemsSection ul {
+    padding: 0;
+    margin: 0;
+}
+
+.footerItemsSection ul li {
+    text-align: left;
+    padding: 5px 0;
 }
