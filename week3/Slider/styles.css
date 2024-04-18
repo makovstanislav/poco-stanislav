@@ -1,0 +1,52 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before,*::after {
+    box-sizing: inherit;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+}
+
+main ul {
+    justify-content: flex-start;
+    gap: 0;
+    overflow-x: hidden;
+}
+
+main li {
+    background: red;
+    color: white;
+    display: grid;
+    flex-shrink: 0;
+    font-size: 3rem;
+    height: 50vh;
+    place-items: center;
+    width: 100vw;
+    /*transition: transform 0.5s ease-in-out;
+    transform: translateX(-100%);*/
+}
+
+main li:first-of-type {
+    background: blue;
+}
+
+main li:last-of-type {
+    background: green;
+}
+/*
+main li:target {
+    transform: translateX(0);
+}*/
