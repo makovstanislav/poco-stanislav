@@ -35,8 +35,6 @@ main li {
     height: 50vh;
     place-items: center;
     width: 100vw;
-    /*transition: transform 0.5s ease-in-out;
-    transform: translateX(-100%);*/
 }
 
 main li:first-of-type {
@@ -46,7 +44,3 @@ main li:first-of-type {
 main li:last-of-type {
     background: green;
 }
-/*
-main li:target {
-    transform: translateX(0);
-}*/

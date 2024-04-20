@@ -1,0 +1,45 @@
+body {
+    text-align: center;
+}
+
+header {
+    background-color: #b2d6ff;
+    height: 4rem;
+}
+
+main {
+    background-color: #ebedf0;
+    height: 12rem;
+}
+
+.signup {
+    background-color: #d7e9fe;
+    height: 3rem;
+}
+
+.feature {
+    height: 3rem;
+}
+
+#feature-1 {
+    background-color: #f5cf8d;
+}
+
+#feature-2 {
+    background-color: #f09a9d;
+}
+
+#feature-3 {
+    background-color: #c8c6fa;
+}
+
+@media (max-width: 767px) {
+    .features-container {
+        flex-wrap: wrap;
+    }
+
+    .feature {
+        width: 50%;
+    }
+}
+

@@ -9,3 +9,6 @@ function sortAndDisplayDigits() {
     const sortedDigits = digits.join('');
     document.getElementById('result').textContent = sortedDigits;
 }
+
+
+

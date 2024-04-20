@@ -16,15 +16,18 @@ INIT day AS INTEGER
 INIT monthIndex AS INTEGER
 INIT lookUpTable – an object with 12 key-value pairs: month index and respective max number of days 
 INIT errorMsg = "Please enter a date in dd.mm format"
-INIT result
+INIT result AS INTEGER
 
 PROMPT to enter dd.mm
 GET input FROM user
+// Validate
 IF input is valid THEN
     // Calculate the day of the year
-    SET day to result
-    FOR each month in lookUpTable as long as it less than monthIndex
-        ADD numberOfDays to result
+    SET day TO result
+    FOR each key (month index) IN lookUpTable 
+        IF less than monthIndex THEN 
+            ADD numberOfDays TO result
+        ENDIF
     ENDFOR
     DISPLAY result
 ELSE

@@ -1,8 +1,14 @@
 function sumAndDisplayNumbers() {
     const input = document.getElementById('numbersInput').value
-    if (!input) {
+    if (!input  ) {
         alert('Please enter numbers.')
         return
+    }
+
+    if (isNaN(input)) 
+    {
+        alert("Must input numbers");
+        return ;
     }
     
     // convert input to numbers array
