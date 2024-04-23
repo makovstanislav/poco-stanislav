@@ -6,12 +6,10 @@ if (input.isNan) {
 }
 let outputString = ''
 
-while (input !== 0) {
+
+do {
     outputString = (input % 2).toString() + outputString
     input = Math.floor(input / 2)
-}
+} while (input != 0) 
 
 alert("The binary string is " + outputString) 
-
-
-// convert Binary String to Integer
