@@ -1,6 +1,9 @@
 // convert Integer into Binary String
 
-let input = Number(prompt("Enter a number"))
+let input = prompt("Enter a number")
+if (input.isNan) {
+    input = Number(input)
+}
 let outputString = ''
 
 while (input !== 0) {
