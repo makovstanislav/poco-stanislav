@@ -1,0 +1,14 @@
+li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(112, 84, 84, 0.354);
+    max-width: 14em;
+    margin-bottom: 1em;
+    padding: 0.7em 0.5em ;
+}
+
+.bookName {
+    margin-right:1em
+}
