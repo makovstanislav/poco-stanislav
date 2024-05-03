@@ -10,17 +10,17 @@ const books = [
     }
 ]
 
-
-
 let booksFeed = books.map((book) => {
     return `
         <div>
-            <p>${book.title}</p>
-            <p>${book.author}</p>
+            <p style="display:inline"><strong>Book: </strong>${book.title}</p>
+            <p style="display:inline"><strong>Author: </strong>${book.author}</p>
         </div>
         `
 }) 
 
+function displayBooksFeed() {
+    document.body.innerHTML = booksFeed.join('')
+}
 
-
-console.log(booksFeed)
+displayBooksFeed()
