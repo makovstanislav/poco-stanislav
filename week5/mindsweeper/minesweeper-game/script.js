@@ -28,12 +28,12 @@ for (var row = 0; row < ROWS_COUNT; row++) {
 
 //
 // TODO: Task 1 - add some bombs at fixed positions.
-cells[0][0].isBomb = true;
+/* cells[0][0].isBomb = true;
 cells[1][7].isBomb = true;
 cells[4][9].isBomb = true;
 cells[9][9].isBomb = true;
 cells[8][2].isBomb = true;
-cells[9][2].isBomb = true;
+cells[9][2].isBomb = true; */
 
 
 
@@ -43,6 +43,15 @@ cells[9][2].isBomb = true;
 //                other constants.
 //
 
+
+for (let i = 0; i <= BOMBS_COUNT; i++) {
+  let row = Math.floor(Math.random() * 9)
+  console.log(row)
+  let column = Math.floor(Math.random() * 9)
+  if (!cells[row][column].isBomb)  {
+    cells[row][column].isBomb = true
+  }
+}
 
 // Once the game has been initialized, we "render" it.
 render();
