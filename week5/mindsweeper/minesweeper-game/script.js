@@ -43,13 +43,11 @@ cells[9][2].isBomb = true; */
 //                other constants.
 //
 
-
 for (let i = 0; i <= BOMBS_COUNT; i++) {
   let row = Math.floor(Math.random() * 9)
-  console.log(row)
-  let column = Math.floor(Math.random() * 9)
-  if (!cells[row][column].isBomb)  {
-    cells[row][column].isBomb = true
+  let col = Math.floor(Math.random() * 9)
+  if (!cells[row][col].isBomb)  {
+    cells[row][col].isBomb = true
   }
 }
 
@@ -89,7 +87,37 @@ function countAdjacentBombs(row, col) {
   // TODO: Task 4 - Adjacent bombs are bombs in cells touching our cell (also diagonally). Implement this function
   //                so that it returns the count of adjacent cells with bombs in them. 
   //
-  return 1;
+  let count = 0
+    
+  // check upper horizontal
+  for (let c = col-1; c <= col+1; c++) {
+    if (0 <= c && c <= 9 && 0 <= row - 1 && row - 1 <= 9) {
+      if (cells[row - 1][c].isBomb) {
+        count ++
+      }
+    }
+  }
+
+  // check horizontal sides cell
+  if (0 <= col - 1 && col + 1 <= 9) {
+    if (cells[row][col - 1].isBomb) {
+      count ++
+    } else if (cells[row][col+1].isBomb) {
+      count ++
+    }
+  }
+
+  // check bottom horizontal
+  for (let c = col-1; c <= col+1; c++) {
+    if (0 <= c && c <= 9 && 0 <= row + 1 && row + 1 <= 9) {
+      if (cells[row + 1][c].isBomb) {
+        count ++
+      }
+    }
+  }
+
+
+  return count;
 }
 
 function getBombsCount() {
