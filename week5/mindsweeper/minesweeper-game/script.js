@@ -66,31 +66,31 @@ function discoverCell(row, col) {
   // Prevent discovering if flagged
   if (!cells[row][col].hasBeenFlagged) {
     cells[row][col].discovered = true
-  }
   
   //
   // TODO: Task 6 - Discover neighbor cells recursively, as long as there are no adjacent bombs to the current cell.
   //
 
-  if (countAdjacentBombs(row, col) === 0) {
-    
-    // reveal 3 upper cells
-    for (let c = col-1; c <= col+1; c++) {
-      if (0 <= c && c <= 9 && 0 <= row - 1 && row - 1 <= 9) {
-        cells[row-1][c].discovered=true
+    if (countAdjacentBombs(row, col) === 0) {
+      
+      // reveal 3 upper cells
+      for (let c = col-1; c <= col+1; c++) {
+        if (0 <= c && c <= 9 && 0 <= row - 1 && row - 1 <= 9) {
+          cells[row-1][c].discovered=true
+        }
       }
-    }
 
-    // reveal 2 side cells
-    if (0 <= col - 1 && col + 1 <= 9) {
-      cells[row][col-1].discovered=true
-      cells[row][col+1].discovered=true
-    }
+      // reveal 2 side cells
+      if (0 <= col - 1 && col + 1 <= 9) {
+        cells[row][col-1].discovered=true
+        cells[row][col+1].discovered=true
+      }
 
-    // reveal 3 bottom cells
-    for (let c = col-1; c <= col+1; c++) {
-      if (0 <= c && c <= 9 && 0 <= row + 1 && row + 1 <= 9) {
-        cells[row + 1][c].discovered=true
+      // reveal 3 bottom cells
+      for (let c = col-1; c <= col+1; c++) {
+        if (0 <= c && c <= 9 && 0 <= row + 1 && row + 1 <= 9) {
+          cells[row + 1][c].discovered=true
+        }
       }
     }
   }
