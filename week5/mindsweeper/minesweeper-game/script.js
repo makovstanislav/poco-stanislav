@@ -68,6 +68,29 @@ function discoverCell(row, col) {
   // TODO: Task 6 - Discover neighbor cells recursively, as long as there are no adjacent bombs to the current cell.
   //
 
+  if (countAdjacentBombs(row, col) === 0) {
+    
+    // reveal 3 upper cells
+    for (let c = col-1; c <= col+1; c++) {
+      if (0 <= c && c <= 9 && 0 <= row - 1 && row - 1 <= 9) {
+        cells[row-1][c].discovered=true
+      }
+    }
+
+    // reveal 2 side cells
+    if (0 <= col - 1 && col + 1 <= 9) {
+      cells[row][col-1].discovered=true
+      cells[row][col+1].discovered=true
+    }
+
+    // reveal 3 bottom cells
+    for (let c = col-1; c <= col+1; c++) {
+      if (0 <= c && c <= 9 && 0 <= row + 1 && row + 1 <= 9) {
+        cells[row + 1][c].discovered=true
+      }
+    }
+  }
+
   //
   // TODO: Task 8 - Implement defeat. If the player "discovers" a bomb (clicks on it without holding shift), set the variable defeat to true.
   //
@@ -89,7 +112,7 @@ function countAdjacentBombs(row, col) {
   //
   let count = 0
     
-  // check upper horizontal
+  // add 3 upper cells
   for (let c = col-1; c <= col+1; c++) {
     if (0 <= c && c <= 9 && 0 <= row - 1 && row - 1 <= 9) {
       if (cells[row - 1][c].isBomb) {
@@ -98,7 +121,7 @@ function countAdjacentBombs(row, col) {
     }
   }
 
-  // check horizontal sides cell
+  // add 2 side cells
   if (0 <= col - 1 && col + 1 <= 9) {
     if (cells[row][col - 1].isBomb) {
       count ++
@@ -107,7 +130,7 @@ function countAdjacentBombs(row, col) {
     }
   }
 
-  // check bottom horizontal
+  // add 3 bottom cells
   for (let c = col-1; c <= col+1; c++) {
     if (0 <= c && c <= 9 && 0 <= row + 1 && row + 1 <= 9) {
       if (cells[row + 1][c].isBomb) {
@@ -141,7 +164,7 @@ function getTotalCellsToClear() {
   return 0;
 }
 
-function checkForVictory() {
+function addForVictory() {
   //
   // TODO: Task 10 - Implement victory. If the player has revealed as many cells as they must (every cell that isn't a
   //                 bomb), set variable victory to true.
@@ -223,13 +246,13 @@ function render() {
 }
 
 // This function gets called each time a cell is clicked. Arguments "row" and "col" will be set to the relevant
-// values. Argument "event" is used to check if the shift key was held during the click.
+// values. Argument "event" is used to add if the shift key was held during the click.
 function onCellClicked(row, col, event) {
   if (event.shiftKey) {
     flagCell(row, col);
   } else {
     discoverCell(row, col);
   }
-  checkForVictory();
+  addForVictory();
   render();
 }
