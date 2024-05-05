@@ -65,6 +65,10 @@ function discoverCell(row, col) {
   //
   // Prevent discovering if flagged
   if (!cells[row][col].hasBeenFlagged) {
+    if (cells[row][col].isBomb) {
+      defeat = true
+    }
+
     cells[row][col].discovered = true
   
   //
