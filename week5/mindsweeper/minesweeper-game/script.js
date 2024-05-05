@@ -181,7 +181,7 @@ function getTotalCellsToClear() {
   //
   // TODO: Task 9 - Implement stats: the counters currently always display 0, calculate and return the relevant values.
   //
-  return 0;
+  return 100 - BOMBS_COUNT;
 }
 
 function addForVictory() {
@@ -189,6 +189,10 @@ function addForVictory() {
   // TODO: Task 10 - Implement victory. If the player has revealed as many cells as they must (every cell that isn't a
   //                 bomb), set variable victory to true.
   //
+  
+  if (getClearedCells() === getTotalCellsToClear()) {
+    victory = true
+  }
   return 0;
 }
 
