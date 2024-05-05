@@ -159,14 +159,22 @@ function getBombsCount() {
   //
   // TODO: Task 9 - Implement stats: the counters currently always display 0, calculate and return the relevant values.
   //
-  return 0;
+  return BOMBS_COUNT;
 }
 
 function getClearedCells() {
   //
   // TODO: Task 9 - Implement stats: the counters currently always display 0, calculate and return the relevant values.
   //
-  return 0;
+  let count = 0
+  for (r = 0; r <= cells.length - 1; r++) {
+    for (c = 0; c <= cells[r].length - 1; c++) {
+      if (cells[r][c].discovered) {
+        count ++
+      }
+    }
+  }
+  return count;
 }
 
 function getTotalCellsToClear() {
